@@ -9,11 +9,59 @@
       "text": "We're doing cool stuff!"
     }
   },
-  "footer": {
-    "root": "/welcome",
-    "logo": "https://thepavilion.io/uploads/default/original/2X/5/55f90858adf4cfef7eb2d9f90a4244943f3d4d26.svg",
-    "left_text": "These pages are copyright me 2021."
-  },
+ "footer": {
+  "root": "/welcome",
+  "logo": "https://thepavilion.io/uploads/default/original/2X/5/55f90858adf4cfef7eb2d9f90a4244943f3d4d26.svg",
+  "left_text": "These pages are copyright CoCreation.World 2024.",
+  "sections": [
+    {
+      "title": "CoCreation.World",
+      "description": "Connect, collaborate, and contribute on shared quests to achieve our sustainable development goals."
+    },
+    {
+      "section": "quick-links",
+      "links": [
+        { "name": "Home", "url": "https://cocreation.world" },
+        { "name": "About Us", "url": "https://cocreation.world/about" },
+        { "name": "Features", "url": "https://cocreation.world/features" },
+        { "name": "Contact Us", "url": "mailto:hello@cocreation.world" }
+      ]
+    },
+    {
+      "section": "support",
+      "links": [
+        { "name": "FAQs", "url": "https://cocreation.world/faq" },
+        { "name": "Documentation", "url": "https://cocreation.world/tutorials" },
+        { "name": "Roadmap", "url": "https://cocreation.world/roadmap" },
+        { "name": "Report a Bug", "url": "https://cocreation.world/new-topic?category=support/report-a-bug&body=Share%20detailed%20descriptions%20of%20any%20friction%20or%20problem%20you%20encounter." }
+      ]
+    },
+    {
+      "section": "membership",
+      "links": [
+        { "name": "Sign-up", "url": "https://cocreation.world/login" },
+        { "name": "Log-in", "url": "https://cocreation.world/login" }
+      ]
+    }
+  ],
+  "small_links": [
+    { "name": "Privacy", "url": "https://cocreation.world/pub/privacy-policy" },
+    { "name": "Terms of Service", "url": "https://cocreation.world/pub/terms-of-service" },
+    { "name": "About", "url": "https://cocreation.world/about" }
+  ],
+  "social_links": [
+    { "name": "Facebook", "url": "https://www.facebook.com/profile.php?id=61565788606224" },
+    { "name": "YouTube", "url": "https://www.youtube.com/@cocreationworld" },
+    { "name": "Email", "url": "mailto:hello@cocreation.world" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/company/cocreationworld/" },
+    { "name": "GitHub", "url": "https://github.com/CoCreation-World" },
+    { "name": "Patreon", "url": "https://patreon.com/cocreationworld" },
+    { "name": "Discord", "url": "https://discord.gg/NQPsF37S6R" },
+    { "name": "Microsoft Teams", "url": "https://teams.live.com/l/community/FEA89zeuGNmYmHshwI" },
+    { "name": "Hub", "url": "https://world.cocreation.world/@/hub" },
+    { "name": "Slack", "url": "https://join.slack.com/t/slack-bgd7840/shared_invite/zt-2r4bw3t84-z9JtoJaV5CrvRTFQxCpwrA" }
+  ]
+},
   "menus": [
     {
       "name": "my-menu",
