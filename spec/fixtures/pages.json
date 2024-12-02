@@ -3,9 +3,9 @@
     "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.6.5/lottie.min.js"
   ],
   "header": {
-    "root": "/my-page",
+    "root": "/blog",
     "notice": {
-      "href": "/my-page",
+      "href": "/blog",
       "text": "We're doing cool stuff!"
     }
   },
