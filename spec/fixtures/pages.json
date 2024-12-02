@@ -6,12 +6,12 @@
     "root": "/blog",
     "notice": {
       "href": "/blog",
-      "text": "We're doing cool stuff!"
+      "text": "Connect, Collaborate and Contribute"
     }
   },
   "footer": {
     "root": "/home",
-    "logo": "https://cocreation.world/user_avatar/cocreation.world/kilian/48/179_2.png",
+    "logo": "https://co-creation-11573.map-storage.workadventu.re/assets/entities/c9deb4ed-79ce-47cd-bbec-936a392ad8bf-logo%20300.png",
     "left_text": "These pages are copyright CoCreation.World 2024. All rights reserved."
   },
   "menus": [
@@ -19,9 +19,9 @@
       "name": "my-menu",
       "items": [
         {
-          "label": "My Page",
+          "label": "About",
           "description": "My cool page",
-          "href": "/my-page",
+          "href": "/about",
           "items": [
             {
               "label": "My Secondary Page",
