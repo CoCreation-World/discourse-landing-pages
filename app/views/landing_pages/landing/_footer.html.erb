@@ -1,42 +1,102 @@
-<footer class="landing-footer">
-  <div class="footer-left">
-    <a href="<%= path local_assigns[:root] || "/" %>">
-      <%- if local_assigns[:logo].present? %>
-        <img src="<%= local_assigns[:logo] %>" alt="<%= SiteSetting.title %>" id="site-logo">
-      <%- elsif SiteSetting.logo.present? %>
-        <img src="<%= SiteSetting.logo %>" alt="<%= SiteSetting.title %>" id="site-logo">
-      <%- else %>
-        <h2 id='site-text-logo'><%= SiteSetting.title %></h2>
-      <%- end %>
-    </a>
-    <%- if local_assigns[:left_text].present? %>
-      <div class="text">
-        <%= local_assigns[:left_text].html_safe %>
+<footer class="landing-footer custom-footer">
+  <div class="wrap">
+    <div class="flexbox">
+      <div class="first-box">
+        <div class="heading">
+          CoCreation.World
+        </div>
+        <div class="blurb">
+          Connect, collaborate, and contribute on shared quests to achieve our sustainable development goals.
+        </div>
       </div>
-    <%- end %>
-  </div>
-  <div class="footer-right">
-    <%- if @menu.present? %>
-      <ul class="menu">
-        <% @menu.items.each do |item| %>
-          <li class="primary-item">
-            <a href="<%= item[:href] %>" class="primary-item-link">
-              <label><%= item[:label] %></label>
-            </a>
-            <%- if item[:items] %>
-              <ul class="secondary-items">
-                <% item[:items].each do |item| %>
-                  <li class="item <%= 'coming-soon' if item[:coming_soon] %>">
-                    <a href="<%= item[:href] unless item[:coming_soon] %>" class="<%= item[:label].parameterize %>">
-                      <%= item[:label] %>
-                    </a>
-                  </li>
-                <% end %>
-              </ul>
-            <%- end %>
-          </li>
-        <% end %>
-      </ul>
-    <%- end %>
+      <div class="second-box">
+        <div class="links">
+          <div class="list" data-easyfooter-section="quick-links">
+            <span title="Quick Links">Quick Links</span>
+            <ul>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="home">
+                <a class="footer-section-link" href="https://cocreation.world" target="_self" referrerpolicy="no-referrer">Home</a>
+              </li>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="about-us">
+                <a class="footer-section-link" title="About" href="https://cocreation.world/about" target="_self" referrerpolicy="no-referrer">About Us</a>
+              </li>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="features">
+                <a class="footer-section-link" title="Features" href="https://cocreation.world/features" target="_self" referrerpolicy="no-referrer-when-downgrade">Features</a>
+              </li>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="contact-us">
+                <a class="footer-section-link" title="Contact" href="mailto:hello@cocreation.world" target="_blank" referrerpolicy="no-referrer-when-downgrade">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="list" data-easyfooter-section="support">
+            <span title="Support">Support</span>
+            <ul>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="faqs">
+                <a class="footer-section-link" title="FAQ" href="https://cocreation.world/faq" target="_self" referrerpolicy="no-referrer-when-downgrade">FAQs</a>
+              </li>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="documentation">
+                <a class="footer-section-link" title="tutorials" href="https://cocreation.world/tutorials" target="_self" referrerpolicy="no-referrer-when-downgrade">Documentation</a>
+              </li>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="roadmap">
+                <a class="footer-section-link" href="https://cocreation.world/roadmap" target="_self" referrerpolicy="no-referrer-when-downgrade">Roadmap</a>
+              </li>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="report-a-bug">
+                <a class="footer-section-link" title="Report a Bug" href="https://cocreation.world/new-topic?category=support/report-a-bug&amp;body=Share%20detailed%20descriptions%20of%20any%20friction%20or%20problem%20you%20encounter." target="_blank" referrerpolicy="no-referrer-when-downgrade">Report a Bug</a>
+              </li>
+            </ul>
+          </div>
+          <div class="list" data-easyfooter-section="membership">
+            <span>Membership</span>
+            <ul>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="sign-up-">
+                <a class="footer-section-link" href="https://cocreation.world/login" target="_self" referrerpolicy="no-referrer-when-downgrade">Sign-up</a>
+              </li>
+              <li class="footer-section-link-wrapper" data-easyfooter-link="log-in">
+                <a class="footer-section-link" href="https://cocreation.world/login" target="_self" referrerpolicy="no-referrer-when-downgrade">Log-in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="third-box">
+        <div class="footer-links">
+          <a class="small-link" data-easyfooter-small-link="privacy" target="_blank" href="https://cocreation.world/pub/privacy-policy">Privacy</a>
+          <a class="small-link" data-easyfooter-small-link="terms-of-service" target="_blank" href="https://cocreation.world/pub/terms-of-service">Terms of service</a>
+          <a class="small-link" data-easyfooter-small-link="about" target="_blank" href="https://cocreation.world/about">About</a>
+        </div>
+        <div class="social">
+          <a class="social-link" data-easyfooter-social-link="facebook" title="Join us on Facebook" target="_blank" href="https://www.facebook.com/profile.php?id=61565788606224">
+            <svg class="fa d-icon d-icon-fab-facebook svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-facebook"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="youtube" title="Check out our latest videos on Youtube" target="_blank" href="https://www.youtube.com/@cocreationworld">
+            <svg class="fa d-icon d-icon-fab-youtube svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-youtube"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="e-mail" target="_blank" href="mailto:hello@cocreation.world">
+            <svg class="fa d-icon d-icon-fas fa-envelope svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#envelope"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="linkedin" title="Follow us on LinkedIN" target="_blank" href="https://www.linkedin.com/company/cocreationworld/">
+            <svg class="fa d-icon d-icon-fab fa-linkedin svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-linkedin"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="git-hub" target="_blank" href="https://github.com/CoCreation-World">
+            <svg class="fa d-icon d-icon-fab fa-github svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-github"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="patreon" target="_blank" href="https://patreon.com/cocreationworld">
+            <svg class="fa d-icon d-icon-fab-patreon svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-patreon"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="discord" target="_blank" href="https://discord.gg/NQPsF37S6R">
+            <svg class="fa d-icon d-icon-fab fa-discord svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-discord"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="teams" target="_blank" href="https://teams.live.com/l/community/FEA89zeuGNmYmHshwI">
+            <svg class="fa d-icon d-icon-fab fa-windows svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-windows"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="hub" href="https://world.cocreation.world/@/hub">
+            <svg class="fa d-icon d-icon-fab-wpexplorer svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-wpexplorer"></use></svg>
+          </a>
+          <a class="social-link" data-easyfooter-social-link="slack" target="_blank" href="https://join.slack.com/t/slack-bgd7840/shared_invite/zt-2r4bw3t84-z9JtoJaV5CrvRTFQxCpwrA">
+            <svg class="fa d-icon d-icon-fab-slack svg-icon svg-string" xmlns="http://www.w3.org/2000/svg"><use href="#fab-slack"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
