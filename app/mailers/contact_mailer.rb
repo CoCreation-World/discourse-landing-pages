@@ -3,7 +3,7 @@ class ContactMailer < ::ActionMailer::Base
   include Email::BuildEmailHelper
 
   def contact_email(from, message)
-    contact_email = SiteSetting.landing_contact_email || SiteSetting.contact_email
+    contact_email = 'hello@cocreation.world'
     build_email(
       contact_email,
       template: "contact_mailer",
