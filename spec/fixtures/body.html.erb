@@ -1,11 +1,7 @@
-<div class="landing page">  
+<div class="page intro">
   <div class="container">
     <div class="title-container">
-      <% if !mobile_view? && @welcome.present? %>
-        <div class="lottie title welcome"></div>
-      <% else %>
-        <h1>Connect, Collaborate & Contribute</h1>
-      <% end %>
+      <h1>Connect, Collaborate & Contribute</h1>
     </div>
     <div class="text-container">
       <div class="secondary-text">
@@ -24,15 +20,11 @@
         <li><a href="/about" class="more">more</a></li>
       </ul>
     </div>
-    <%= render partial: "contact_form", locals: { success_message: "Sent. We'll be in touch shortly." } %>
   </div>
 </div>
 
-<div class="page first">
+<div class="page connect">
   <div class="container">
-    <div class="scene-container">
-      <div class="lottie scene rossatto large welcomesoftware"></div>
-    </div>
     <div class="text-container">
       <div class="primary-text">
         <span>Connect: Connecting with people from around the world breaks down walls of cultural and ideological barriers dividing humanity, as you welcome diverse people.</span>
@@ -47,11 +39,8 @@
   </div>
 </div>
 
-<div class="page second">
+<div class="page collaborate">
   <div class="container">
-    <div class="scene-container">
-      <div class="lottie scene rossatto large welcomeservices"></div>
-    </div>
     <div class="text-container">
       <div class="primary-text">
         <span>Collaborate: Collaborating with people from around the world increases your curiosity and reduces your biases, as you celebrate your differences in solving problems.</span>
@@ -66,11 +55,8 @@
   </div>
 </div>
 
-<div class="page third">
+<div class="page contribute">
   <div class="container">
-    <div class="scene-container">
-      <div class="lottie scene rossatto large welcomemembers"></div>
-    </div>
     <div class="text-container">
       <div class="primary-text">
         <span>Contribute: Contributing with people from around the world to achieve collective goals is an immersive experience, as you cherish the humanity in every person.</span>
@@ -84,86 +70,3 @@
     </div>
   </div>
 </div>
-
-<div class="page contact">
-  <div class="container">
-    <div class="title-container">
-      <% if !mobile_view? && @contact %>
-        <div class="lottie contact"></div>
-      <% else %>
-        <h1>Talk to Us</h1>
-      <% end %>
-    </div>
-    <%= render partial: "contact_form" %>
-  </div>
-</div>
-
-<% if @welcome.present? %>
-  <script>
-    var title = lottie.loadAnimation({
-      container: document.querySelector(".lottie.welcome"),
-      renderer: 'svg',
-      autoplay: true,
-      loop: false,
-      path: "<%= @welcome.upload.url %>"
-    });
-    title.setSpeed(0.2);
-  </script>
-<% end %>
-
-<% if @welcomesoftware.present? %>
-  <script>
-    setTimeout(() => {
-      lottie.loadAnimation({
-        container: document.querySelector(".lottie.welcomesoftware"),
-        renderer: 'svg',
-        autoplay: true,
-        loop: true,
-        path: "<%= @welcomesoftware.upload.url %>"
-      });
-    }, 50);
-  </script>
-<% end %>
-
-<% if @welcomeservices.present? %>
-  <script>
-    setTimeout(() => {
-      lottie.loadAnimation({
-        container: document.querySelector(".lottie.welcomeservices"),
-        renderer: 'svg',
-        autoplay: true,
-        loop: true,
-        path: "<%= @welcomeservices.upload.url %>"
-      });
-    }, 100);
-  </script>
-<% end %>
-
-<% if @welcomemembers.present? %>
-  <script>
-    setTimeout(() => {
-      lottie.loadAnimation({
-        container: document.querySelector(".lottie.welcomemembers"),
-        renderer: 'svg',
-        autoplay: true,
-        loop: true,
-        path: "<%= @welcomemembers.upload.url %>"
-      });
-    }, 150);
-  </script>
-<% end %>
-
-<% if @contact.present? %>
-  <script>
-    setTimeout(() => {
-      var contact = lottie.loadAnimation({
-        container: document.querySelector(".lottie.contact"),
-        renderer: 'svg',
-        autoplay: true,
-        loop: false,
-        path: "<%= @contact.upload.url %>"
-      });
-      contact.setSpeed(0.2);
-    }, 200);
-  </script>
-<% end %>
