@@ -1,26 +1,35 @@
-@import "variables";
+.buttons button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+.buttons .signup {
+  background-color: #ecf0f1;
+  color: #3498db;
+}
+.buttons .signup:hover {
+  background-color: #3498db;
+  color: #ecf0f1;
+  transform: scale(1.05);
+}
+.buttons .login {
+  background-color: #3498db;
+  color: #ecf0f1;
+}
+.buttons .login:hover {
+  background-color: #2980b9;
+  color: #ecf0f1;
+  transform: scale(1.05);
+}
 
-body.landing-page {
-  .btn {
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 1em;
-    cursor: pointer;
-    color: $primary;
-    background-color: $primary-very-low;
-    text-align: center;
-
-    label {
-      cursor: pointer;
-    }
-
-    &.btn-icon {
-      display: inline-flex;
-    }
+@media (max-width: 480px) {
+  header .buttons {
+      flex-direction: column;
+      align-items: flex-start;
   }
-
-  .btn-primary {
-    background-color: $tertiary;
-    color: $secondary;
+  header .buttons button {
+      margin: 5px 0;
   }
 }

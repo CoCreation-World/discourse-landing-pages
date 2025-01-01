@@ -1,57 +1,16 @@
-<header class="landing-header">
-  <div class="contents">
-    <div class="primary">
-      <div class="header-title">
-        <a href="<%= path local_assigns[:root] || "/" %>">
-          <%- if local_assigns[:logo_url] || application_logo_url.present? %>
-            <img src="<%= local_assigns[:logo_url] || application_logo_url %>" alt="<%= local_assigns[:title] || SiteSetting.title %>" id="site-logo">
-          <%- else %>
-            <h2 id='site-text-logo'><%= local_assigns[:title] || SiteSetting.title %></h2>
-          <%- end %>
-        </a>
-      </div>
-      <% unless mobile_view? %>
-        <%- if @menu.present? %>
-          <%= render partial: "menu" %>
-        <%- end %>
-      <% end %>
-    </div>
-    <% unless mobile_view? %>
-      <%- if local_assigns[:notice].present? %>
-        <a class="notice" href="<%= local_assigns[:notice][:href] %>">
-          <label class="highlight"><%= local_assigns[:notice][:text] %></label>
-        </a>
-      <%- end %>
-    <% end %>
-    <div class="panel">
-      <span class='header-buttons'>
-        <% if mobile_view? %>
-          <%- if @menu.present? %>
-            <a class="mobile-toggle">
-              <span class="menu-icon"><%= SvgSprite.raw_svg('bars') %></span>
-              <span class="hide-menu-icon"><%= SvgSprite.raw_svg('times') %></span>
-            </a>
-          <%- end %>
-        <% else %>
-          <%- if current_user %>
-            <a href="<%= path "/"%>" class='btn btn-primary forum-button'>
-              <%= I18n.t('landing_pages.go_to_forum') %>
-            </a>
-          <% else %>
-            <a href="<%= path "/login"%>" class='btn btn-primary login-button'>
-              <%= I18n.t('log_in') %>
-            </a>
-          <%- end %>
-        <% end %>
-      </span>
-    </div>
-  </div>
-</header>
 
-<% if mobile_view? %>
-  <%- if @menu.present? %>
-    <div class="mobile-header">
-      <%= render partial: "menu" %>
+<header>
+    <div class="logo" style="display: flex; align-items: center;"></div>
+        <img id="site-logo" class="logo-big" src="https://ccwdraft.carrd.co/assets/images/favicon.png?v=3406ce05" alt="CoCreation.World" width="32" height="32">
+        <h1>CoCreation.World</h1>
     </div>
-  <%- end %>
-<% end %>
+    <nav>
+        <a href="./home">Home</a>
+        <a href="./about">About</a>
+        <a href="mailto:hello@cocreation.world">Contact</a>
+    </nav>
+    <div class="buttons">
+        <button class="signup" onclick="window.location.href='./signup'">Sign Up</button>
+        <button class="login" onclick="window.location.href='./login'">Login</button>
+    </div>
+</header>
