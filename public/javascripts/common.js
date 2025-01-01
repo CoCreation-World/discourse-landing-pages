@@ -129,3 +129,95 @@
     });
   }
 })(jQuery); // eslint-disable-line
+
+    // Get the modal elements
+    var modals = document.querySelectorAll('.modal');
+    var detailBoxes = document.querySelectorAll('.detail-box');
+    var spans = document.querySelectorAll('.close');
+
+    // Open the modal
+    detailBoxes.forEach((box, index) => {
+        box.addEventListener('click', () => {
+            modals[index].style.display = 'block';
+        });
+    });
+
+    // Close the modal when the user clicks on <span> (x)
+    spans.forEach((span, index) => {
+        span.addEventListener('click', () => {
+            modals[index].style.display = 'none';
+        });
+    });
+
+    // Close the modal when the user clicks anywhere outside of the modal
+    window.addEventListener('click', (event) => {
+        modals.forEach((modal) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+
+    // Arrays of buzzwords for each modal
+    const buzzwords = {
+        connect: ["Screenings/Podcasts Q&A", "Cohort Courses", "Book Clubs", "Networking-Events", "Game-Nights", "Workshops", "Hackathons", "Conferences", "Meetups", "Webinars"],
+        collaborate: ["Team Challenges", "Hackathons", "Summits"],
+        contribute: ["Volunteering", "Donations", "Mentorship", "Service-Learning", "Internships", "Fellowships", "Scholarships", "Grants", "Sponsorships", "Partnerships"]
+    };
+
+    // Function to change buzzwords dynamically
+    function changeBuzzword(modalId, buzzwordArray) {
+        let currentIndex = 0;
+        const textElement = document.getElementById(`dynamic-text-${modalId}`);
+        
+        function updateText() {
+            textElement.innerHTML = buzzwordArray[currentIndex];
+            currentIndex = (currentIndex + 1) % buzzwordArray.length;
+        }
+
+        setInterval(updateText, 3000);
+    }
+
+    // Initialize buzzword changes for each modal
+    changeBuzzword('connect', buzzwords.connect);
+    changeBuzzword('collaborate', buzzwords.collaborate);
+    changeBuzzword('contribute', buzzwords.contribute);
+
+
+    // Hover effect for detail boxes
+        document.querySelectorAll('.detail-content').forEach(box => {
+            const originalBackgroundImage = box.style.backgroundImage;
+            box.addEventListener('mouseover', () => {
+                box.querySelector('.detail-overlay').style.display = 'block';
+                box.style.backgroundImage = 'none';
+            });
+            box.addEventListener('mouseout', () => {
+                box.querySelector('.detail-overlay').style.display = 'none';
+                box.style.backgroundImage = originalBackgroundImage;
+            });
+        });
+
+
+
+
+
+    import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3.4/dist/web.js';
+    
+    Typebot.initBubble({
+        typebot: "chat-ccw",
+        apiHost: "https://chat.cocreation.world",
+        previewMessage: { message: "Whats on your mind?", autoShowDelay: 3000 },
+        theme: {
+            button: {
+                backgroundColor: "#3C3144",
+                customIconSrc: "https://minio-production-fa1d.up.railway.app/typebot/public/workspaces/clwxv3blz001hp28kvtibhtth/typebots/cm00rfuyi0001uh083fc0hsxt/bubble-icon?v=1728660896913",
+                size: "large"
+            },
+            previewMessage: { textColor: "#3C3144", closeButtonIconColor: "#3C3144" },
+            chatWindow: {
+                backgroundColor: "https://minio-production-fa1d.up.railway.app/typebot/public/workspaces/clwxv3blz001hp28kvtibhtth/typebots/cm00rfuyi0001uh083fc0hsxt/background?v=1728663900016"
+            }
+        }
+    });
+
+ 
